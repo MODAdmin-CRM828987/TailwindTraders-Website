@@ -3,21 +3,19 @@ name: .NET Core
 on:
   push:
     branches: 
-    - master 
+    - main 
   pull_request:
     branches: 
-    - master 
+    - main 
 
 env:
-  CI: true
+  CI: false
   AZURE_WEBAPP_NAME: demo5eff7  # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: 'd:\a\TailwindTraders-Website-Drop'    
   AZURE_WEBAPP_PROJECT_PATH: 'd:\a\TailwindTraders-Website\TailwindTraders-Website\Source\Tailwind.Traders.Web\Tailwind.Traders.Web.csproj'    
 jobs:
   build:
-
     runs-on: windows-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Setup Node.js environment
